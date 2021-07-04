@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>java学习笔记 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="java学习笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-04 22:37" pubdate>
+        July 4, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      8.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      88
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">java学习笔记</h1>
+            
+            <div class="markdown-body">
+              <p>java输出语句</p>
+<p>System.out.print(“里面是输出的内容”)；  输出语句<br>System.out.print<br>ln(“”)；  加ln 就是输出后换行</p>
+<p>public的区别于作用</p>
+<p>一个类前面的public是可有可无的<br>如果一个类使用public修饰则文件名必须和类名一致<br> 如果一个类前面没有使用public修饰，则文件名可以与类名不一致</p>
+<p>avg 平均    args参数 </p>
+<p>整数类型字面值  有 100  9   -1  0    整数类型int<br>浮点类型字面值  有 0.1  3.1111111   -98.9999    浮点类型double<br>字符串类型字面值  有 “这里” “你好” “88        字符串类型  Steing<br>字符串可以一次存放 0个, 一个或者多个，但是必须使用英文双引号引起来<br>字符类型字面值  有’a’ ‘2’ ‘你’        字符类型char<br>字符类型表示一次只能存放一个，并且使用英文的单引号引起来</p>
+<p><em><strong><strong>变量</strong></strong></em>**<br>常用的数据类型<br>整数类型int<br>   布尔类型Boolean</p>
+<p>变量操作步骤<br>第一步：声明变量，就是确定当前变量存放数据的类型<br>语法格式：数据类型 变量名称<br>如：int a</p>
+<p>第二步：赋值就是将右侧的赋值给等号左侧的变量名称<br>语法格式：变量名称 = 值<br>如：a = 18</p>
+<p>第三步：使用<br>System.out.println(“a”);   双引号是直接输出原样的数据<br> 如果要输出赋值后的数值就不需要双引号<br>System.out.println(a);  这样就是正确输出的</p>
+<p>变量和赋值也可以一起表达<br>如 int a = 100;   这样是省掉一步的方法</p>
+<p>如果有多个变量类型相同时，则可以一次声明多个变量，之间使用英文的,逗号隔开<br>如：我我想把0.2 66.6 3.04 这三个一起变量并声明就如下操作<br>  double a = 0.2,b = 66.6,c = 3.04;</p>
+<p><strong><strong><strong>转移序列符</strong></strong></strong>**<br>“\n”表示换行      “\t”表示tab大空格<br>“\“表示输出\     “&quot;“表示输出一个”<br>“\’”表示输出‘     “\u加四位数字”表示unicode转移序列符，输出一个空格</p>
+<p><em><strong><strong><strong>变量分类</strong></strong></strong></em>*<br>*可以分为两种<br>*一种是局部变量：在方法中声明的  这个变量范围是小的<br>*第二种是成员变量：在类中声明的   这个变量范围是大的</p>
+<p><strong><strong>变量按数据类型分为两种</strong></strong><br>第一是基本数据类型变量<br>第二是引用数据类型变量</p>
+<p>基本数据类型的变量在内存中存放真正的值，比如；int,char,double<br>引用数据类型的变量在内存中存放地址，比如；String</p>
+<p><em><strong><strong><strong>基本数据类型有四大类，共计八种</strong></strong></strong></em><br>整数类型：byte short int long<br>整数类型中默认的值是 int</p>
+<p><em><strong><strong><strong>整数类型各自取值的范围</strong></strong></strong></em><br>类型           占用储存空间              存储范围<br>byte               1个字节                  -128～127<br>short              2个字节                  最大存到32768<br>int                  4个字节                  最大存储到十位数<br>long               8个字节                  最大存储到</p>
+<p>在java中当对byte，short，char类型赋值时,<br>    //没超过取值范围是可以直接赋值这是JAVA规定的</p>
+<p>在java中取值范围大的类型不能直接给取值范围小的类型赋值</p>
+<p><em><strong><strong><strong>字符类型</strong></strong></strong></em><br>整数值可以给字符类型直接赋值，字符中存放的就是阿斯ascll对应的字符</p>
+<p>int<br>字符也可以直接给int类型赋值，int类型的变量中存放的就是对应字符的ascll</p>
+<p>字符类型：char<br>字符类型，一次只能存放一个，并且使用英文的单引号引起来<br>一个汉字表示一个字符<br>整数类型与字符类型之间是可以进行相互转换的</p>
+<p><em><strong><strong><strong>类型之间转换</strong></strong></strong></em><br>自动类型转换也叫做隐士类型类型转换<br>；当取值范围小的类型赋给取值范围大的类型<br>强制类型转换也叫做显示类型转换<br>；当取值范围大的类型给取值范围小的类型时，则必须进行强制类型转换，<br>但是进行强制类型转换时可能存在精度丢失</p>
+<p><em><strong><strong><strong>类型转换的六条规则</strong></strong></strong></em><br>基本数据类型中除了Boolean类型以为，剩余七种类型可以进行转换<br>当取值范围小的类型赋给取值范围大的类型，构成自动转换也叫做隐式类型转换</p>
+<p>顺序；byte short char int long float double</p>
+<p>；当取值范围大的类型给取值范围小的类型时，则必须进行强制类型转换，<br>但是进行强制类型转换时可能存在精度丢失</p>
+<p>当+两边的操作数都是数值类型，则做加法运算<br>当+两边的操作数中有一个为非数值类型时，则做连接，最终连接后的结果为String类型<br>单做加法运算时，必须保证两个操作数都是数值类型</p>
+<p>++表示自身加1<br>++又分为，前置++，和后置++<br>前置++，将++编写在变量名称前面<br>如，int a = 3；<br>        ++a；    结果就是4<br>–表示自身减1<br>也分为前置–  和后置–</p>
+<p>优先级别：在java中算数运算符先算 然后在到关系运算符在然后到赋值运算符</p>
+<p><em><strong><strong><strong>逻辑运算符</strong></strong></strong></em><br>逻辑与 &amp;     逻辑或 |            逻辑异或 ^    逻辑非 !<br>短路与 &amp;&amp;    短路或 ||<br>优先级别：算术运算符   关系运算符    逻辑运算符<br>逻辑运算符；最终的结果为布尔类型的值</p>
+<p><em><strong><strong><strong>逻辑与&amp;，表示并且</strong></strong></strong></em><br>当两个条件同时为true，则结果为true，否则结果为false<br>true &amp; true表示true 与 true，结果为true。<br>true &amp; false表示true 与 false，结果为false。<br>false &amp; false 表示 false 与 false  结果为false</p>
+<p><em><strong><strong><strong>逻辑或|  ，表示并且</strong></strong></strong></em><br>当两个条件中有一个为true，则结果为true，否则结果为false<br>true &amp; true表示true 与 true，结果为true。<br>true &amp; false表示true 与 false，结果为true。<br>false &amp; false表示false 与false，结果则为false</p>
+<p><em><strong><strong><strong>逻辑异或^，表示并且、</strong></strong></strong></em><br>当两个条件的值不同时，则结果为true，否则为false<br>true ^ true 表示true 与 true ，结果为false<br>true ^ false 表示true 与 false，结果为true<br>false ^ false 表示false 与 false，结果为false<br>false ^ true 表示 false 与 true ，结果为true</p>
+<p>*******逻辑非！ *******<br>表示对布尔类型的值进行取反<br>!true  结果为false<br>!false  结果为true</p>
+<p><em><strong><strong><strong>短路与&amp;&amp;</strong></strong></strong></em><br>短路与，逻辑与运算结果都相同，但执行结果可能不同，<br>当使用短路与，并且第一个条件为false时，则结果直接为额false<br>false &amp;&amp; true 结果为false<br>true &amp;&amp;false 结果为false</p>
+<p>短路或 || 类似逻辑或，都表示或<br>短路或，逻辑或运行结果都相同，但是执行过程可能不同，<br>当使用短路或，并且第一个条件为额true时，则结果直接为true</p>
+<p>*******键盘接收用户输入 *******<br>第一步：在源文件导包 必须在源文件的第一行<br>import java.util.Scanner;<br>第二步：创建Scanner对象<br>Scanner input =new Scanner(System.in);<br>第三步：友好提示<br>Sysem.out.print(“请输入”);<br>第四步：键盘输入<br>int num = input.nextInt();<br>等待用户接收键盘输入值，当按回车键，则表示输入完毕，<br>并将回车之前所输入的内容赋值给左侧的变量。</p>
+<p>在java中，键盘接收字符串类型时没有nextString（）。而使用的是next（）</p>
+<p>在java中，键盘不能直接接收字符类型，而是先接收字符串类型，<br>然后在字符串中获取第0个位置中的值，则使用charAt(0)</p>
+<p><em><strong><strong><strong>三木运算符：也叫条件运算符</strong></strong></strong></em><br>语法格式如下<br>条件 ? 代码1 : 代码2;</p>
+<p>程序流程控制有三大机构<br>顺序结构：按顺序逐行进行执行<br>选择结构：<br>循环结构：</p>
+<p><em><strong><strong><strong>if else选择结构</strong></strong></strong></em><br>语法格式<br>if(需要判断的条件){<br> 代码块1<br>}else{<br>  代码块2<br>}</p>
+<p><em><strong><strong><strong>多重if选择结构</strong></strong></strong></em><br>语法格式<br>if(需要判断条件1){<br> 输出代码<br>}else if(需要判断条件2){<br> 输出代码<br>}else if(需要判断条件3){<br> 输出代码<br>}<br>就这样以此类推下去<br>注意: 多重if选择结构中的条件顺序可以颠倒，但是程序运行结果可能会影响，<br>解决办法：当颠倒时，条件必须编写严谨<br>注意：在多重if中else{}是可有可无的，如果有则编写在多重if的最后，<br>并且最多编写一个，当所有条件都不满足时，则执行else中的输出代码。</p>
+<p>×××××××××键盘输入的比较时×××××××××<br>在Java中，字符串比较时，当使用==比较的是地址是否一致<br>如果在字符串中比较内容，则必须使用equals()，如果相当则为true，否则为false<br>当字符串比较时，建议固定值编写在前面。</p>
+<p><em><strong><strong><strong>switch case</strong></strong></strong></em><br>当做等值操作时，可以使用switch case<br>switch case中表达式可以：byte，short，int，char，在jdk7.0及以后还可以是String类型。枚举<br>语法格式switch case<br>switch(表达式){</p>
+<p>case    常来值1:<br>break;      表示中断语句，遇到break则执行switch case外面的语句<br>case     常量值2:<br>breal;<br>}<br>1：在switch中编可以写任意多个case<br>2：case后面常量值的类型必须与表达式的类型一致。<br>3：default是可有可无的，如果有则一个switch中最多编写一个default，<br>当所有case都不满足时则执行default</p>
+<p>1：case后面常量值的顺序可以任意，建议都按顺序编写<br>2：default顺序也可以编写在switch中任意位置<br>当所有case常量都不满足时则执行default<br>建议default编写在所有case的后面 这样好看一些<br>3：break是可有可无的<br>当没有编写break，则从当前第一个匹配的case一致往下执行(也就是穿透) 根据自己的需求自己编写break<br>4：case也是可以合并的</p>
+<p><em><strong><strong><strong>多重if 与switch case的区别</strong></strong></strong></em><br>多重if：可以做等值操作也可以做范围操作<br>switch case：只能做等值操作    等值操作时优先用switch case</p>
+<p><em><strong><strong><strong>循环特点和好处</strong></strong></strong></em><br>循环：在Java中做重复的事情，并且重复的只编写一次<br>循环好处：减少代码，不用写那么多<br>常用循环：<br>for循环，while循环，do while循环。<br>循环特点：<br>循环条件，循环操作（循环体）<br>for循环语法格式：<br>for(表达式1;表达式2;表达式3;){</p>
+<p>循环体</p>
+<p>}<br>在for循环中，表达式1，完成变量的初始值，如int q = 1;<br>在for循环中，表达式2，完成循环条件判断，如果条件满足为true<br>则执行循环体，否则执行循环外面的语句 如：q&lt;=5<br>在for循环中，循环体主要做重复的事情，并且重复的事情在循环体中只需要编写一次<br>循环体中可以编写java中任何语句<br>如：System.out.print(“你好”);<br>在for循环中表达式3完成变量值的更改，如：q++</p>
+<p><em><strong><strong><strong>双重循环也叫做二重循环：</strong></strong></strong></em><br>在一个完整的循环中又包含另一个完整的循环<br>双重循环结论：<br>当外层循环执行一次，则内层循环则执行一遍</p>
+<p><strong><strong><strong><strong><strong><strong><strong>注意：</strong></strong></strong></strong></strong></strong></strong><br>1.在for循环中，三个表达式都可以省略，但是分号必须编写，否则出现无线循环，<br>2.在for循环中，省略表达式一，则出现编译错误，解决办法：将表达式一编写在for循环上面 如：<br>int  i = 1;<br>for(;i &lt;= 5;i++){<br>   System.out.print(i);</p>
+<p>}<br>3.在for循环中，省略表达式二，则出现无线循环，也就是说当省略表达式二时，则条件默认为true<br>4.在for循环中，当省略表达式三，则出现无限循环，解决办法：将表达式3编写在循环体中最后一条语句<br>5.在for循环中，表达式一变量中的值在循环外进行使用时，则出现编译错误，解决办法：将表达式一中声明的变量，编写在for循环外面进行声明</p>
+<p><em><strong><strong><strong>while循环</strong></strong></strong></em><br>语法格式：<br>while(循环条件){<br>循环体</p>
+<p>}<br>执行流程：<br>首先判断条件，当条件为true时，则执行循环体，然后在判断条件。。。。。一直到循环条件为false时，则循环结束</p>
+<p><em><strong><strong><strong>do while循环</strong></strong></strong></em><br>特点：先执行，然后在判断<br>语法格式：<br>do{<br>        循环体    </p>
+<p>}while(循环条件);<br>执行流程：<br>先执行循环体，然后在判断条件，当条件为额true时，<br>则继续执行循环体，然后在判断条件。。。。一直到循环条件为false时则循环结束</p>
+<p><em><strong><strong><strong>循环的使用</strong></strong></strong></em><br>当循环次数固定时，建议使用for循环<br>当循环次数不固定时，建议使用while循环或者，do while循环<br>先判断，在执行，则使用while循环。<br>先执行，然后在判断，则使用do while循环。</p>
+<p>在循环中使用continue语句：<br>当遇到continue语句时，则结束当次循环继续执行下一次循环！！</p>
+<p>在循环中使用break语句：<br>当在循环中遇到break则结束当前整个循环！！</p>
+<p>continue与 break区别：<br>使用场合不同<br>break：可以在switch case中使用，也可以在循环中使用。<br>continue：只能在循环中使用。<br>作用不同：<br>break：表示中断，当在switch case中或在循环中遇到break时则结束当前整个switch case或循环，执行外面的语句。<br>continue：表示继续，当知循环中continue，则结束本次循环，继续执行下一次循环</p>
+<p><em><strong><strong><strong>方法的定义及分类：</strong></strong></strong></em><br>方法：也叫做函数，实现某个功能<br>方法分类：<br>系统提供的方法：<br>常用的系统提供的方法：如nexrInt()   next()   nextDouble()  print()   println()</p>
+<p>用户自定义的方法：</p>
+<p>方法的基本语法格式：<br>[修饰符] 返回值类型  方法名称([参数列表]){<br>    方法体<br>}<br>[ ]中的内容是可有可无的<br>暂时将方法的修饰符编写为public static<br>返回值的类型有两种情况：<br>第一种：无返回值类型，也就是编写为void<br>第二种：有返回值类型，目前可有编写9种数据类型之一</p>
+<p>方法名称，也就是标识符<br>建议编写单词，这样会比较好理解<br>建议采用驼峰命名法，如：age  getAge。 第一个单词用小写其余其他单词的首字母用大写</p>
+<p>*****注意：1，方法必须编写在类中<br>    2,用户自定义的方法，并不会自动执行，则必须进行方法的调用。</p>
+<p><strong><strong><strong>方法的调用：</strong></strong></strong>*<br>语法格式：类名.方法名称([参数方法]);</p>
+<p>当调用本类中的方法时，则也可以编写为：方法名([参数类型]); </p>
+<p><strong><strong>无参带返回类型方法：</strong></strong>*<br>*该题只有一个结果时，此时就可以编写为带返回类型方法完成。<br>*如果方法有返回类型则在方法中必须编写return，通过return返回结果。<br>*方法的返回类型必须与return后面值的类型一致。<br>*通过return将结果返回到方法的调用处，因此在调用处进行处理。</p>
+<p><em><strong><strong>break,continue,return之间的区别</strong></strong></em>*<br>***break:表示中断，可以在switch case 中或循环中使用，当遇到break时则结束当前整个switch case或循环。<br>***continue:表示继续，只能在循环中使用，当遇到continue时则结束本次（当次）循环，继续执行下一次循环。<br>***return：表示返回，只能在方法中使用，当遇到return时则返回到方法的调用处。<br>return的特殊形式：当方法是无返回类型时，则可以在方法体中编写return，但必须编写为return; 。</p>
+<p><strong><strong>未知数方法</strong></strong><br>1.当你编写有未知数的方法时，就可以编写为带参数的方法<br>2.带参数方法的语法格式：<br>    public static void 方法名称 （参数列表）{<br>          方法体<br>    }<br>3.每一个参数的语法格式：数据类型 参数名   如 int a<br>×××× 多个参数之间使用英文的逗号隔开,  不能简写  如int a,int b<br>4.方法中未知的编写为参数，称为形式参数简称形参<br> ××××调用方法时参数为已知的称为实际参数，简称实参<br>××××也就是实参的值赋给行参变量，必须保证实参与形参个数一致，类型一致，顺序一致</p>
+<p><em><strong><strong>方法重载</strong></strong></em>*<br>在同一个类中，方法的名称相同，参数列表必须不同（类型不同），<br>与返回类型无关，构成方法的重载！！！</p>
+<p>重要的面向对象来啦！！！！！！！！！！！！！！ 大气精神gogogog</p>
+<p><em><strong><strong>面向对象的概念</strong></strong></em>*<br>面向对象：虚拟世界“模拟现实”生活，必须保证模拟一致<br>面向过程：<br>****类：对同一类事物的抽象描述，也就是：不具体的<br>           如：电脑类，鼠标类，手机类，人类。。。。<br>****对象：万物皆对象，也就是说：具体的<br>            如：我的电脑，我的手机，你的手机<br>****类与对象之间的关系<br>        抽象与具体的关系<br>****描述对象的特征，称为属性，如：颜色，价格，尺寸。。。。</p>
+<p>****对象所做的事情，称为方法或者行为。<br>    张三对象：<br>       属性：姓名，性别，年龄，身高，体重，住址，。。。。<br>       方法：吃饭，睡觉，打游戏，看电影。。。。</p>
+<pre><code>  李四对象
+      属性：姓名，性别，年龄。。。。
+      方法：睡觉，学习，打游戏，打篮球，唱歌。。。。。
+</code></pre>
+<p>将多个对象找到相同的属性和方法组合到一起，形成一类<br>****学生类<br>         属性：姓名，性别，年龄<br>          方法：睡觉，打游戏    </p>
+<p><strong><strong><strong>编写类的操作步骤</strong></strong></strong><br>    第一步：编写类<br>    语法格式：<br>    [修饰符] class 类名{</p>
+<pre><code>&#125;
+第二步：编写属性
+语法格式：
+[修饰符] 数据类型 属性名称 [=值];
+属性是编写在类中的
+[] 中的内容是可有可无的
+属性名称也是标识符，建议采用驼峰命名法
+</code></pre>
+<p>当属性或成员变量没有赋值时，则是有默认值的，数据类型不同<br>则默认值不同：<br>******整数类型的默认值为：0<br>******浮点类型默认值为：0.0<br>******字符类型默认值：\u0000<br>******布尔类型的默认值为：false<br>******所有引用类型的默认值为：null</p>
+<pre><code>第三步：编写方法
+语法格式：
+[修饰符] 返回类型 方法名称 ([参数列表])&#123;
+方法体
+&#125; 
+方法必须编写在类中
+</code></pre>
+<p><strong><strong><strong>编写测试类</strong></strong></strong><br>  也就是包含main方法的类</p>
+<p><strong><strong><strong>创建对象</strong></strong></strong><br>    语法格式：<br>    类名 引用名称 = new 类名();<br>*****注意，一个类可以创建多个对象</p>
+<p><strong><strong><strong>访问对象中的属性和方法</strong></strong></strong><br>    访问对象中的属性：<br>    引用名称.属性名称</p>
+<p><strong><strong><strong>访问对象中的语法</strong></strong></strong><br>    语法格式：<br>    引用名称.方法名称();</p>
+<p><strong><strong><strong>成员变量和局部变量的区别</strong></strong></strong>*<br>    声明位置不同<br>    成员变量：在类中是声明<br>    局部变量：在方法中声明，其中行参也属于局部变量<br><strong><strong><strong>初始值不同</strong></strong></strong><br>          成员变量：在没有赋值时，是有默认值的，数据类型不同，则默认值则不同<br> 整数类型的默认值为：0<br>  浮点类型默认值为：0.0<br>   字符类型默认值：\u0000<br>    布尔类型的默认值为：false<br>     所有引用类型的默认值为：null</p>
+<pre><code>     局部变量：没有默认值，也就是需要声明和赋值后才能使用
+</code></pre>
+<p>在同一个类中，成员变量的名字也可以与局部变量的名字一样，但是<br>局部变量的名字优先，也即是就近优先，如果非要访问成员变量则必须添加this<br>局部给成员赋值需要加this，如：this.aaaa = bbbbp;</p>
+<p>this表达当前这个对象，也就是当前谁调用这个方法则这个对象就是谁</p>
+<p>*<strong><strong><strong>对对象中的属性赋值</strong></strong></strong><br>    第一种方法：完成对对象中的属性赋值，  使用引用名称.属性名称 = 值<br>       第二种方法：使用构造方法完成。</p>
+<p><em><strong><strong><strong>构造方法以及重载</strong></strong></strong></em>**<br>     作用：完成对对象中的属性赋值<br>    构造方法：<br>    构造方法是一个特殊的方法，构造方法名字必须与类名一致，<br>    构造方法必须没有返回类型，也就是不编写返回类型(void).<br>语法格式：<br>    public 方法名称([参数列表]){</p>
+<p>}<br><strong><strong><strong>构造方法如何执行的？</strong></strong></strong>*<br>    当创建对象时自动执行相匹配的构造方法<br>       构造方法分类：<br>    隐式构造方法：<br>        当在一个类中，没有手动编写构造方法，则系统会提供一个默认无参的构造方法<br>     显示构造方法：<br>        当在一个类中，手动编写构造方法，则系统不会提供默认无参的构造方法。 </p>
+<p>×××××××建议×××××××××<br>     当手动编写构造方法时，先编写无参构造方法，然后在编写带参构造方法，这样会减去很多麻烦！！！！！！</p>
+<pre><code>构造方法重载：
+     在同一个类中，构造方法的名字必须相同，但是参数列表不同（个数不同，类型不同，顺序不同）
+</code></pre>
+<p><strong><strong><strong>变量按数据类型分类</strong></strong></strong>**<br>    基本数据类型：在内存中存放的真正的值<br>        ：4大类，一共8种<br>    引用数据类型：在内存中存放的是地址（引用）<br>    引用数据类型有两种：<br>    第一种：String<br>     第二种：用户自定义类型（类名），</p>
+<pre><code>对引用数据类型赋值方式：
+第一种：将对象赋给引用名称
+   如：S = new Studen();
+第二种：将null值赋给引用名称
+   如： S = null
+</code></pre>
+<p><strong><strong><strong>空指针异常</strong></strong></strong>*<br>    属于运行错误：java.lang,NullPointerException<br>    原因：当应用名称的值为null时，就不能访问某个对象中的属性或者方法，如果非要访问则就出现空指针异常。<br>    解决办法：在访问某个对象某个属性或方法之前必须保证该引用名称中存放的是对象的地址(引用)</p>
+<p><strong><strong><strong>封装</strong></strong></strong><br>    面向对象有三大特征：<br>    封装，继承，多态</p>
+<pre><code>封装：
+定义：隐藏类的内部信息，不允许外部程序直接访问，而是通过方法进行操作
+
+封装操作步骤：
+第一步：将属性设为私有的private，只能本类中使用
+第二步：编写对应属性赋值setXxx和取值getXxx方法
+第三步：根据题目要求来看要不要使用判断语句。
+</code></pre>
+<p><em><strong><strong><strong>this关键字</strong></strong></strong></em>*<br>    this表示当前这个对象，也就是说当前谁调用这个方法则这个对象对象就是谁</p>
+<pre><code>this关键字可以访问本类中的属性：
+当局部变量和成员变量没有同名时，则编写属性名等价于this属性名，如：id 等价于this.id
+当局部变量和成员变量同名时，并且访问成员变量则必须使用this。
+
+this关键字可以访问本类中的实例方法
+方法名称([参数列表]);    等价于   this.方法名称([参数列表]);
+
+this关键字还可以访问本类中的构造方法：
+this();    //这个是访问本类无参构造方法
+this([实参列表])；
+当使用this访问本类构造方法时，则只能编写在构造方法中，并且是第一条语句
+构造方法不能出现递归调用，如果不是写在第一的话就是直接报错的（就是不能自己调用自己）
+</code></pre>
+<p>*<strong><strong><strong>参数传递</strong></strong></strong><br>     基本数据类型作为参数传递：<br>          当基本数据类型作为参数传递时，传递的是真正的值，在一个方法中改变变量的值，<br>         对另一个方法变量的值没有任何影响，各自变量是独立的。</p>
+<pre><code>引用数据类型作为参数传递
+      多个引用名称指向同一个对象，当一个引用名称改变对象中的值，
+           则另一个引用名称在访问属性时值也会发生改变
+</code></pre>
+<p><em><strong><strong><strong>static关键字</strong></strong></strong></em>*<br>    static关键字可以修饰属性：<br>    加上static的变量称为静态属性也叫做类的变量<br>    没加static的变量称为非静态变量，也叫实例变量<br>    在方法区（共享区）中存储，并且所有对象都可以访问<br>    与类同生死，也就是说类在static修饰的属性就在。<br>    可以使用类名。属性名称，也可以使用引用名称。属性名称<br>         注意：当引用名称的值为null时，也可以访问静态属性，不会出现空指针异常<br>    类优先于对象，也就是说类的的生命周期比较长<br>        static关键字也可以修饰方法<br>    称为静态方法也叫做类的方法<br>    与类同生死，也就是说类存在时static修饰的方法就存在<br>    可以使用类名。方法名称（[参数列表]）； ，也可以使用引用名称。方法名称（[参数列表]）;<br>                      注意：当引用名称的值为null时，也可以调用静态方法，不会出现空指针异常<br>    静态方法只能访问静态属性，静态方法<br>    当方法体中访问静态属性，静态方法时，可以编写为静态方法</p>
+<p>××××××××static 关键字可以修饰静态代码块  ×××××××××<br>    主要完成对静态属性赋值<br>    静态代码块在类第一次被载入时则执行</p>
+<p>×××××××继承××××××××××<br>    继承的好处：减少代码的重复性，</p>
+<pre><code>编写继承代码的步骤
+第一步：编写一个父类
+[修饰符] calss 类名 &#123;
+    //属性和方法
+&#125;
+
+第二步：编写子类
+[] class 子类类名 extends 父类类名&#123;
+    //编写独有属性和方法
+&#125;
+
+注意：
+1·当一个类中没有编写有指定父类的时候，则默认为object类  （这个类似默认的隐式的）
+2·Object类似所有类的父类（超类）   
+如：
+class dog&#123;       ××××××左边等价于右边××××    class dog extends Object&#123;
+
+&#125;                         &#125;
+</code></pre>
+<p><em><strong><strong><strong><strong><strong>继承的注意事项</strong></strong></strong></strong></strong></em>******</p>
+<pre><code>子类继承父类，但是不能继承父类的构造方法
+父类也叫做超类（基类），之类也叫做派生类
+继承满足的条件如：
+如：猫 是 动物  （必须是猫是动物条件成立，如果反过来 动物是猫这样就是不对的）
+继承具有两大属性：
+1·一个类只能继承一个直接的父类，也就是类的单根性
+2·类具有传递性（就好比a有的属性继承给b的时候 c在继承b的话就会连b继承到a的属性一起继承到c去）
+</code></pre>
+<p>××××××重写×××××××<br>    override 也叫覆盖<br>       子类方法名称必须与父类方法名称一致<br>        参数列表一致<br>         返回类型一致或父类方法返回类型的子类类型<br>         修饰符不能缩小范围<br>    子类不能重写：<br>          构造方法不能重写<br>          属性不能重写<br>          静态方法不能重写<br>          私有方法不能重写<br>只有方法体不一样时才重写</p>
+<p>××××××this关键字和super关键字区别×××××××<br>    this关键字<br>       代表当前这个对象<br>       this可以访问本类中的实例变量，实例方法也可以访问本类其他构造方法<br>        this还可以访问父类中的实力变量，实例方法<br>    super关键字<br>        表示超类或父类<br>         super只能在子类中使用，可以访问父类中的实例变量，实例方法，还可以访问父类的构造方法</p>
+<p>××××××××当实例化子类时父类做了什么××××××××××</p>
+<pre><code>先执行父类构造方法，然后在执行子类的相匹配构造方法
+   如果子类构造方法中没有指明则默认调用父类无参构造方法
+   如果子类构造方法中指明用父类哪个构造方法，则先执行父类相匹配构造方法，然后在执行子类相匹配构造方法
+
+建议：当手动编写构造方法时，一定要先编写无参构造方法，在编写需要的构造方法
+</code></pre>
+<p>××××××××多态××××××××<br>    多态的语法格式：<br>       父类类名 引用名称 = new 之类类名（）；<br>    当是多态时，该引用名称只能访问父类中的属性和方法，但是，优先访问子类重写以后的方法<br>              多态：将多个对象调用一个方法，得到不同的结果<br>    满足多态的条件：<br>         1：子类必须继承父类<br>         2：子类重写父类的方法</p>
+<p>××××××××多态的好处××××××××</p>
+<pre><code>减少代码的重复性
+</code></pre>
+<p>×××××××多态中的两种类型转换××××××<br>    1：向上转型，也叫做自动类型转换，构成多态<br>        父类类型 引用名称 = new 子类类名（）；<br>    当时多态时，该引用名称只能访问父类中的属性和方法，但是优先访问子类重写后的方法</p>
+<pre><code>2：向下转型，也叫做强制类型转换
+    当时多态时，并且访问子类独有的属性或方法时，则必须进行向下转型
+当向下转型时，建议先进行判断，当合法则在转为对应的类型，则使用instanceof关键字。否则可能会出现类型转换异常java.lang.ClassCastException
+</code></pre>
+<p>××××××××递归××××××××<br>    递归：方法自己及调用自己，必须保证又出口</p>
+<p>×××××××包××××××<br>在java中，使用包来管理类，就像在资源管理器中使用文件夹管理一样。在同一个包中，类名不能重名，在不同包中类名可以相同</p>
+<p>初级会涉及到的包有如下：<br>java.lang            java语言的基础包<br>java.util             工具类<br>java.io             输入输出相关的类<br>java.trxt            文本处理相关的类<br>java.net            网络相关的类<br>java.mah            数学相关的类</p>
+<p>××××××××包的定义×××××××<br>1：使用package关键字定义包，package定义包的语句必须作为源文件的第一条语句<br>2：包的命名规则：<br>     公司域名的倒序。项目名。模块名。子模块名<br>     包名一般情况下所有的字母都是小写<br>3：编译<br>      javac  -d  .   test01.java<br>      javac的-d参数可以指定生成字节码文件的位置（目录）<br>      小点.  代表当前的目录<br>     编译后，系统会在当前目录生成与包名对应的文件夹，把字节码文件储存带该文件夹中<br>4：运行<br>     &gt;java com.bqweq.qweqwe.qwefsdf.<br>      java命令后面跟完整类名<br>5：包名.类名就是一个完整类名，Test01 称为简易类名</p>
+<p>××××××××××使用其他包的类××××××××××<br>调包的前提：<br>    被使用的类必须定义为pubilic修饰的公共类<br>使用方法：<br>    1.直接使用完整的类名<br>    2.先通过import导入被使用的类，在通过简易类名访问</p>
+<p>××××××在项目添加已有的类×××××<br>1.直接把.java源文件复制到src目录对应的包下<br>2.直接复制源代码到src目录中（在eclipse中），系统会自动创建对应的包的源文件</p>
+<p>×××××在工作区导入已有的项目×××××<br>选择：file&gt;import&gt;general&gt;Existing Projects into Workspace<br>注意：在导包的过程中可能会出现命名冲突，建议修改工作去里面的项目名称</p>
+<p>××××object超类×××××<br>boolean      equals(Object obj) 用于判断两个对象的内容是否一样</p>
+<p>protected    finalize()    当对象被垃圾回收器回收时，会执行 对象的flnalize()方法，但是垃圾回收器在什么时候回收这个对象不确定，即这个方法的执行时间不确定，一般不用</p>
+<p>Class&lt;?&gt;  getClass()     返回对 象的运行时类对象，可以简单的理解为返回对象的类的字节码文件</p>
+<p>int        hashCode()        返回对象的哈希码</p>
+<p>void      notify()         在线程中用于唤醒等待中的 线程</p>
+<p>void      wait()        在多线程，让线程等待</p>
+<p>String    toString()      把对象转换为字符串</p>
+<p>1： toString()<br>    作用是把对象转换为字符串<br>    应用场景：System.out.pringln（obj）对象时，会调用对象的toString（）方法<br>    当打印对象时，想显示对象的各个字段值，需要重写toString（）</p>
+<p>2：equals()<br>    使用关系 运算符==判断两个变量是否相等，如果两个变量像等，说明这两个变量<br>    引用堆中的同一个对象<br>    如果想要判断堆中两个对象的内容（即各个成员的变量的值）是否一样，需要重写<br>equals() 方法，根据哈希约定，如果两个对象的equals()相等，那么这两个对象的hashcode()<br>也应该相等，即在重写equals()方法的同时，也要重写hashcode()</p>
+<p>×××××final关键字××××××<br> final是一个关键字，可以修饰类，字段，方法，局部变量，修饰形参<br>1：final修饰的字段必须显示赋值，经常在定义final字段的同时就赋值<br>2：final修饰的字段不能再重新赋值<br>3：一般情况下final与static都是同时使用，final字段所有字母都大写，称为final常量    </p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
+                        <span class="hidden-mobile">我的第一篇文章</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
